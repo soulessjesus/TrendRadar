@@ -8,45 +8,57 @@ crawler:
   enable_crawler: true
   use_proxy: false
 
-# Notification Settings
 notification:
   enable_notification: true
   message_batch_size: 4000
   batch_send_interval: 3
-  
-  # ⚠️ DO NOT PASTE YOUR TOKEN HERE. 
-  # The code will read it from the GitHub Secrets you already set up!
+  # Kept these for safety so the code doesn't crash:
+  dingtalk_batch_size: 20000
+  feishu_batch_size: 29000
+  feishu_message_separator: "━━━━━━━━━━━━━━━━━━━"
+
   webhooks:
+    # ⚠️ DO NOT PASTE TOKEN HERE. It reads from your Secrets!
     telegram_bot_token: "" 
     telegram_chat_id: "" 
+    
+    # LEAVE THESE EMPTY but do not delete them:
+    feishu_url: ""
+    dingtalk_url: ""
+    wework_url: ""
+    email_from: ""
+    email_password: ""
+    email_to: ""
+    email_smtp_server: ""
+    email_smtp_port: ""
+    ntfy_server_url: "https://ntfy.sh"
+    ntfy_topic: ""
+    ntfy_token: ""
 
-# Report Mode
 report:
-  mode: "daily" # Options: "daily" (summary), "current" (now), "incremental" (only new stuff)
+  mode: "daily" 
   rank_threshold: 10
 
-# Keywords weight (How the AI decides what is important)
 weight:
   rank_weight: 0.6
   frequency_weight: 0.3
   hotness_weight: 0.1
 
-# ⚠️ PLATFORMS LIST
-# This tool ONLY supports the following. 
-# You cannot add IG/YouTube as the code does not exist for them yet.
 platforms:
   - id: "wallstreetcn-hot"
     name: "WallStreetCN (Finance)"
   - id: "cls-hot"
     name: "Cailian Press (Finance)"
   - id: "weibo"
-    name: "Weibo (China Twitter)"
+    name: "Weibo"
   - id: "douyin"
-    name: "Douyin (China TikTok)"
+    name: "Douyin"
   - id: "bilibili-hot-search"
-    name: "Bilibili (China YouTube)"
+    name: "Bilibili"
   - id: "baidu"
-    name: "Baidu Search"
+    name: "Baidu"
   - id: "toutiao"
-    name: "Toutiao News"
+    name: "Toutiao"
 ```
+
+---
